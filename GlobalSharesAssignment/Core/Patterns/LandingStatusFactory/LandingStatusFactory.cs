@@ -14,9 +14,9 @@ namespace GlobalSharesAssignment.Core.Patterns.LandingStatusFactory
 
 		public LandingStatusFactory(ICollection<LandingPosition> positionsCheckedBefore, LandingPosition landingPosition)
 		{
-			Strategies[LandingStatus.OkForLanding] = new OkForLandingStrategy(landingPosition, new SeparationUnitConfig(), new PlatformConfig());
-			Strategies[LandingStatus.OutOfPlatform] = new OutOfPlatformStrategy(landingPosition, new SeparationUnitConfig(), new PlatformConfig());
-			Strategies[LandingStatus.Clash] = new ClashStrategy(positionsCheckedBefore, landingPosition, new SeparationUnitConfig());
+			Strategies[LandingStatus.OkForLanding] = new OkForLandingStrategy(landingPosition, new BaseConfig("SeparationUnitConfig"), new BaseConfig("PlatformConfig"));
+			Strategies[LandingStatus.OutOfPlatform] = new OutOfPlatformStrategy(landingPosition, new BaseConfig("SeparationUnitConfig"), new BaseConfig("PlatformConfig"));
+			Strategies[LandingStatus.Clash] = new ClashStrategy(positionsCheckedBefore, landingPosition, new BaseConfig("SeparationUnitConfig"));
 		}
 
 		public ILandingStatusStrategy GetStrategy(LandingStatus status)

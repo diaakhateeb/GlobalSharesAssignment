@@ -13,7 +13,7 @@ namespace GlobalSharesTestUnits.Configurations
 		[SetUp]
 		public void SetUp()
 		{
-			_configs = new SeparationUnitConfig();
+			_configs = new BaseConfig("SeparationUnitConfig");
 		}
 
 		[Test]

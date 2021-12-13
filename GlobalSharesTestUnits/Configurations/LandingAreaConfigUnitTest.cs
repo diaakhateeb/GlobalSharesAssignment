@@ -12,7 +12,7 @@ namespace GlobalSharesTestUnits.Configurations
 		[SetUp]
 		public void Setup()
 		{
-			_configs = new LandingAreaConfig();
+			_configs = new BaseConfig("LandingAreaConfig");
 		}
 
 		[Test]

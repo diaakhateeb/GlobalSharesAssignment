@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Infrastructure\Resources\Configurations\LandingArea.json">
+    <None Update="Infrastructure\Resources\Configurations\LandingAreaConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Infrastructure\Resources\Configurations\Platform.json">
+    <None Update="Infrastructure\Resources\Configurations\PlatformConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Infrastructure\Resources\Configurations\SeparationUnit.json">
+    <None Update="Infrastructure\Resources\Configurations\SeparationUnitConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

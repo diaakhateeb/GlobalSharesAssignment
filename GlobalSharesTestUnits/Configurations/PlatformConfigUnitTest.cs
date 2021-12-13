@@ -12,7 +12,7 @@ namespace GlobalSharesTestUnits.Configurations
 		[SetUp]
 		public void SetUp()
 		{
-			_configs = new PlatformConfig();
+			_configs = new BaseConfig("PlatformConfig");
 		}
 
 		[Test]
