@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GlobalSharesAssignment.Core.Interfaces.Rocket.LandingStatusStrategy;
-using GlobalSharesAssignment.Infrastructure.Interfaces;
 using GlobalSharesAssignment.Infrastructure.Interfaces.Configurations;
 
 namespace GlobalSharesAssignment.Core.Implementations.Rocket.LandingStatusStrategy

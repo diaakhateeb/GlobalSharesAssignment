@@ -6,7 +6,6 @@ using GlobalSharesAssignment.Core.Interfaces.Rocket;
 using GlobalSharesAssignment.Entities;
 using GlobalSharesAssignment.Enums;
 using NUnit.Framework;
-using Xunit;
 
 namespace GlobalSharesTestUnits.Rocket
 {

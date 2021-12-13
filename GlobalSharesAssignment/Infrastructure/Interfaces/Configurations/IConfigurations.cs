@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using GlobalSharesAssignment.Entities;
+﻿using GlobalSharesAssignment.Entities;
 
 namespace GlobalSharesAssignment.Infrastructure.Interfaces.Configurations
 {

@@ -1,5 +1,4 @@
-﻿using GlobalSharesAssignment.Entities;
-using GlobalSharesAssignment.Infrastructure.Implementations.Configurations;
+﻿using GlobalSharesAssignment.Infrastructure.Implementations.Configurations;
 using GlobalSharesAssignment.Infrastructure.Interfaces.Configurations;
 using NUnit.Framework;
 
