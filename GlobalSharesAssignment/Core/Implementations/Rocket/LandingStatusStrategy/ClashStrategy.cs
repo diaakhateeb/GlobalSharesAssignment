@@ -14,6 +14,7 @@ namespace GlobalSharesAssignment.Core.Implementations.Rocket.LandingStatusStrate
 		private readonly ICollection<LandingPosition> _positionsCheckedBefore;
 		private readonly LandingPosition _landingPosition;
 		private readonly IConfigurations _configuration;
+
 		public ClashStrategy(ICollection<LandingPosition> positionsCheckedBefore, LandingPosition landingPosition, IConfigurations configuration)
 		{
 			_positionsCheckedBefore = positionsCheckedBefore;
@@ -23,14 +24,14 @@ namespace GlobalSharesAssignment.Core.Implementations.Rocket.LandingStatusStrate
 
 		public string Execute()
 		{
-			var size = _configuration.GetPosition();
+			var pos = _configuration.GetPosition();
 
 			if ((from position in _positionsCheckedBefore
 				 let axisXMax = Math.Max(position.Position.AxisX, _landingPosition.Position.AxisX)
 				 let axisYMax = Math.Max(position.Position.AxisY, _landingPosition.Position.AxisY)
 				 let axisXMin = Math.Min(position.Position.AxisX, _landingPosition.Position.AxisX)
 				 let axisYMin = Math.Min(position.Position.AxisY, _landingPosition.Position.AxisY)
-				 where axisXMax - axisXMin < size.AxisX && axisYMax - axisYMin < size.AxisY
+				 where axisXMax - axisXMin < pos.AxisX && axisYMax - axisYMin < pos.AxisY
 				 select axisXMax).Any())
 			{
 				return LandingStatus.Clash.ToString();

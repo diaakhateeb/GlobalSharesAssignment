@@ -11,8 +11,8 @@ namespace GlobalSharesAssignment.Infrastructure.Helpers.Configurations
 		{
 			var mainAssemblyPath = AssemblyReferences.GetAssemblyFiles(targetConfigFileType.Assembly).FirstOrDefault();
 			var mainAssemblyDir = Path.GetDirectoryName(mainAssemblyPath ?? throw new FileNotFoundException(nameof(mainAssemblyPath)));
-			var configFilesPath = Path.Combine(mainAssemblyDir ??
-											   throw new DirectoryNotFoundException(nameof(mainAssemblyDir)), "Infrastructure", "Resources", "Configurations");
+			var configFilesPath = Path.Combine(mainAssemblyDir ?? throw new DirectoryNotFoundException(nameof(mainAssemblyDir)),
+				"Infrastructure", "Resources", "Configurations");
 
 			return configFilesPath;
 		}

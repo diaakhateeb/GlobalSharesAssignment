@@ -10,6 +10,7 @@ namespace GlobalSharesAssignment.Core.Helpers.Landing
 		internal static LandingPosition CheckedBefore(LandingPosition landingPosition, ICollection<LandingPosition> positionsCheckedBefore)
 		{
 			var landPos = positionsCheckedBefore.FirstOrDefault(x => JsonConvert.SerializeObject(x) == JsonConvert.SerializeObject(landingPosition));
+
 			if (landPos == null)
 			{
 				positionsCheckedBefore.Add(landingPosition);

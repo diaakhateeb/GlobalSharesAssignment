@@ -11,6 +11,7 @@ namespace GlobalSharesAssignment.Core.Implementations.Landing
 	public class Landing : ILanding
 	{
 		private static ICollection<LandingPosition> _positionsCheckedBefore;
+
 		public Landing()
 		{
 			_positionsCheckedBefore = new List<LandingPosition>();
@@ -30,6 +31,7 @@ namespace GlobalSharesAssignment.Core.Implementations.Landing
 			foreach (var landingStatusStrategy in landingStatusProxiesList.Select(landingStatusProxy => factory.GetStrategy(landingStatusProxy.CurrentStatus)))
 			{
 				landingStatusResult = landingStatusStrategy.Execute();
+
 				if (!string.IsNullOrEmpty(landingStatusResult))
 				{
 					break;

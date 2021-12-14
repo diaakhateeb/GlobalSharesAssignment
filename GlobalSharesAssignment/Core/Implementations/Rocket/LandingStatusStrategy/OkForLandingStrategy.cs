@@ -10,6 +10,7 @@ namespace GlobalSharesAssignment.Core.Implementations.Rocket.LandingStatusStrate
 		private readonly LandingPosition _landingPosition;
 		private readonly IConfigurations _separationUnitConfig;
 		private readonly IConfigurations _platformConfig;
+
 		public OkForLandingStrategy(LandingPosition landingPosition, IConfigurations separationUnitConfig, IConfigurations platformConfig)
 		{
 			_landingPosition = landingPosition;
@@ -19,8 +20,11 @@ namespace GlobalSharesAssignment.Core.Implementations.Rocket.LandingStatusStrate
 
 		public string Execute()
 		{
-			return ((_landingPosition.Position.AxisX == _separationUnitConfig.GetPosition().AxisX && _landingPosition.Position.AxisY == _separationUnitConfig.GetPosition().AxisY) ||
-				   (_landingPosition.Position.AxisX <= _platformConfig.GetPosition().AxisX && _landingPosition.Position.AxisY <= _platformConfig.GetPosition().AxisY))
+			var separationUnitConfigPosition = _separationUnitConfig.GetPosition();
+			var platformConfig = _platformConfig.GetPosition();
+
+			return ((_landingPosition.Position.AxisX == separationUnitConfigPosition.AxisX && _landingPosition.Position.AxisY == separationUnitConfigPosition.AxisY) ||
+				   (_landingPosition.Position.AxisX <= platformConfig.AxisX && _landingPosition.Position.AxisY <= platformConfig.AxisY))
 				? LandingStatus.OkForLanding.ToString()
 				: default;
 		}

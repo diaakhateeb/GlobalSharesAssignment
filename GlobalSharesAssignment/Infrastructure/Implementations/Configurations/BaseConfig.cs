@@ -10,6 +10,7 @@ namespace GlobalSharesAssignment.Infrastructure.Implementations.Configurations
 	{
 		private readonly IConfigurationRoot _configurationRoot;
 		private readonly string _targetConfigName;
+
 		public BaseConfig(string targetConfigName)
 		{
 			_targetConfigName = targetConfigName;

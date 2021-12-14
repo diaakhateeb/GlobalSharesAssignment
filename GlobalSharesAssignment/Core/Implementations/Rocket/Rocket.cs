@@ -8,6 +8,7 @@ namespace GlobalSharesAssignment.Core.Implementations.Rocket
 	public class Rocket : IRocket
 	{
 		private readonly ILanding _landing;
+
 		public Rocket(ILanding landing)
 		{
 			_landing = landing;
