@@ -22,6 +22,11 @@ namespace GlobalSharesAssignment.Core.Implementations.Rocket.LandingStatusStrate
 			var separationUnitConfigPosition = _separationUnitConfig.GetPosition();
 			var platformConfig = _platformConfig.GetPosition();
 
+			if(separationUnitConfigPosition == null || platformConfig == null)
+			{
+				return default;
+			}
+			
 			return (_landingPosition.Position.AxisX + separationUnitConfigPosition.AxisX > platformConfig.AxisX ||
 					_landingPosition.Position.AxisY + separationUnitConfigPosition.AxisY > platformConfig.AxisY ||
 				   (_landingPosition.Position.AxisX < separationUnitConfigPosition.AxisX || _landingPosition.Position.AxisY < separationUnitConfigPosition.AxisY))

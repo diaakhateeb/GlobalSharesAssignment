@@ -26,6 +26,11 @@ namespace GlobalSharesAssignment.Infrastructure.Implementations.Configurations
 			var axisX = _configurationRoot.GetSection($"{_targetConfigName}:Size:AxisX").Value;
 			var axisY = _configurationRoot.GetSection($"{_targetConfigName}:Size:AxisY").Value;
 
+			if(axisX == null || axisY == null)
+			{
+				return default;
+			}
+
 			return new Position
 			{
 				AxisX = int.Parse(axisX),
